@@ -1,0 +1,45 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package net.jc_mouse.unlockpattern;
+import java.awt.Dimension;
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.WindowConstants;
+/**
+ * @web https://www.jc-mouse.net/
+ * @author Mouse
+ */
+public class UnlockJFrame extends JFrame {
+
+    private UnlockPanel unlockPanel;
+
+    /**Constructor de clase*/
+    public UnlockJFrame(){
+        initComponents();
+        UnlockJFrame.this.setLocationRelativeTo(null);
+    }
+    
+    private void initComponents() {        
+        setTitle("GENERADOR DE RUTA");
+        setResizable(false);
+        
+        //setSize(new Dimension(246,280));
+        //setPreferredSize(new Dimension(246,280));
+        setSize(new Dimension(340,360));
+        setPreferredSize(new Dimension(340,360));
+        unlockPanel = new UnlockPanel(this);
+        
+        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);        
+        getContentPane().add(unlockPanel);
+        pack();
+    }
+    
+    public static void main(String args[]){
+        EventQueue.invokeLater(() -> {
+            new UnlockJFrame().setVisible(true);
+        });
+    }
+    
+}
